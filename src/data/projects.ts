@@ -38,6 +38,7 @@ export const projectsData: Project[] = [
     id: 'derby-dungeon',
     tags: ['Unity', 'C#', '3D Graphics', 'Shaders'],
     githubUrl: 'https://github.com/Skaut155/Derby-Dungeon',
+    demoUrl: 'https://itch.io/embed-upload/17844542?color=333333',
     title: {
       es: 'Derby Dungeon',
       ca: 'Derby Dungeon',

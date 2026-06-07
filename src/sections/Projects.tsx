@@ -1,10 +1,12 @@
+import { useState } from 'react';
 import { useTranslation } from '../hooks/useTranslation';
 import { Project, projectsData } from '../data/projects';
-import { Folder, Github, ExternalLink, Terminal, Cpu } from 'lucide-react';
-import { motion } from 'motion/react';
+import { Folder, Github, ExternalLink, Terminal, Cpu, Play } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
 
 export default function Projects() {
   const { t, language } = useTranslation();
+  const [showDerbyEmbed, setShowDerbyEmbed] = useState(false);
 
   return (
     <section id="projects" className="w-full py-16 border-t border-gray-950 bg-[#0a0a0c]">
@@ -102,15 +104,36 @@ export default function Projects() {
                       </a>
                     )}
                     {project.demoUrl && (
-                      <a
-                        href={project.demoUrl}
-                        target="_blank"
-                        rel="noreferrer referrer"
-                        className="text-[11px] font-mono text-gray-500 hover:text-red-500/90 flex items-center gap-1 transition-colors duration-200 cursor-pointer"
-                      >
-                        <ExternalLink className="w-3.5 h-3.5" />
-                        <span>{t.projects.view_demo}</span>
-                      </a>
+                      project.id === 'derby-dungeon' ? (
+                        <button
+                          onClick={(e) => {
+                            e.preventDefault();
+                            setShowDerbyEmbed(prev => !prev);
+                            setTimeout(() => {
+                              const el = document.getElementById('derby-embed-container');
+                              if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            }, 150);
+                          }}
+                          className={`text-[11px] font-mono flex items-center gap-1 transition-colors duration-200 cursor-pointer ${
+                            showDerbyEmbed
+                              ? 'text-red-500 hover:text-red-400 font-bold'
+                              : 'text-gray-500 hover:text-red-500/90'
+                          }`}
+                        >
+                          <ExternalLink className={`w-3.5 h-3.5 ${showDerbyEmbed ? 'animate-pulse' : ''}`} />
+                          <span>{showDerbyEmbed ? 'CLOSE EMULATOR' : t.projects.view_demo}</span>
+                        </button>
+                      ) : (
+                        <a
+                          href={project.demoUrl}
+                          target="_blank"
+                          rel="noreferrer referrer"
+                          className="text-[11px] font-mono text-gray-500 hover:text-red-500/90 flex items-center gap-1 transition-colors duration-200 cursor-pointer"
+                        >
+                          <ExternalLink className="w-3.5 h-3.5" />
+                          <span>{t.projects.view_demo}</span>
+                        </a>
+                      )
                     )}
                   </div>
                 </div>
@@ -118,6 +141,67 @@ export default function Projects() {
             );
           })}
         </div>
+
+        {/* Derby's Dungeon Immersive Arcade / Console Simulation */}
+        <AnimatePresence>
+          {showDerbyEmbed && (
+            <motion.div
+              id="derby-embed-container"
+              initial={{ opacity: 0, scale: 0.98, y: 30 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.98, y: 30 }}
+              transition={{ duration: 0.4 }}
+              className="mt-12 border border-red-500/25 bg-[#0a0b0d] rounded-lg p-4 sm:p-6 shadow-[0_20px_50px_rgba(225,29,72,0.08)] space-y-4"
+            >
+              {/* Terminal Control Header */}
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b border-gray-900 pb-3 gap-3">
+                <div className="flex items-center gap-2">
+                  <span className="h-2 w-2 rounded-full bg-red-500 animate-ping shrink-0" />
+                  <span className="font-mono text-xs text-red-500 font-semibold uppercase tracking-wider">
+                    [ LINK_ESTABLISHED // DEV_URL // ITCH_IO_SIMULATION_CABINET ]
+                  </span>
+                </div>
+                <div className="flex items-center gap-4">
+                  <a
+                    href="https://skaut155.itch.io/derbys-dungeon"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-mono text-[10px] text-gray-400 hover:text-red-500 transition-colors duration-200 flex items-center gap-1"
+                  >
+                    <ExternalLink className="w-3 h-3" />
+                    <span>OPEN_IN_NEW_TAB</span>
+                  </a>
+                  <button
+                    onClick={() => setShowDerbyEmbed(false)}
+                    className="px-3 py-1 border border-red-500/30 bg-red-950/20 hover:bg-red-500/30 text-red-400 hover:text-red-500 font-mono text-[10px] rounded transition-all duration-200 cursor-pointer"
+                  >
+                    TERMINATE_SIM
+                  </button>
+                </div>
+              </div>
+
+              {/* Embedded Iframe matching the user's styling */}
+              <div className="w-full max-w-[1200px] h-[400px] sm:h-[720px] mx-auto rounded-md overflow-hidden bg-[#333333] border border-gray-901 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+                <iframe
+                  src="https://itch.io/embed-upload/17844542?color=333333"
+                  frameBorder="0"
+                  allowFullScreen={true}
+                  scrolling="no"
+                  className="w-full h-full border-none"
+                  title="Derby's Dungeon Game Simulator"
+                >
+                  <a href="https://skaut155.itch.io/derbys-dungeon">Play Derby's Dungeon on itch.io</a>
+                </iframe>
+              </div>
+
+              {/* Console logs / micro telemetry */}
+              <div className="pt-2 border-t border-gray-900 font-mono text-[9px] text-gray-500 flex justify-between">
+                <span>SYSTEM: EMULATED_STANDALONE</span>
+                <span>ENGINE: UNITY_WEBGL</span>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );
