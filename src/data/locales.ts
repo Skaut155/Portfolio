@@ -14,6 +14,7 @@ export interface TranslationSchema {
     description: string;
     cta_primary: string;
     cta_secondary: string;
+    cta_cv: string;
   };
   skills: {
     title: string;
@@ -79,6 +80,7 @@ export const translations: Record<Language, TranslationSchema> = {
       description: 'Estudiante apasionado por la seguridad ofensiva, el análisis de vulnerabilidades y los videojuegos. Comprometido con la creación de código seguro y la detección de fallos para hacer de internet un lugar más seguro.',
       cta_primary: 'Ver Proyectos',
       cta_secondary: 'Contactar',
+      cta_cv: 'Descargar CV',
     },
     skills: {
       title: 'Habilidades Técnicas',
@@ -135,6 +137,7 @@ export const translations: Record<Language, TranslationSchema> = {
       description: 'Estudiant apassionat per la seguretat ofensiva, l\'anàlisi de vulnerabilitats i els videojocs. Compromès amb la creació de codi segur i la detecció de fallades per fer d\'internet un lloc més segur.',
       cta_primary: 'Veure Projectes',
       cta_secondary: 'Contactar',
+      cta_cv: 'Descarregar CV',
     },
     skills: {
       title: 'Habilitats Tècniques',
@@ -191,6 +194,7 @@ export const translations: Record<Language, TranslationSchema> = {
       description: 'Student passionate about offensive security, vulnerability analysis, and video games. Committed to writing secure code and finding vulnerabilities to make the internet a safer place.',
       cta_primary: 'View Projects',
       cta_secondary: 'Contact Me',
+      cta_cv: 'Download CV',
     },
     skills: {
       title: 'Technical Skills',
@@ -247,6 +251,7 @@ export const translations: Record<Language, TranslationSchema> = {
       description: 'Étudiant passionné par la sécurité offensive, l\'analyse des vulnérabilités et les jeux vidéo. Engagé dans la création de code sécurisé et la détection de failles pour rendre internet plus sûr.',
       cta_primary: 'Voir Projets',
       cta_secondary: 'Contactez-moi',
+      cta_cv: 'Télécharger CV',
     },
     skills: {
       title: 'Compétences',

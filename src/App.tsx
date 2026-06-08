@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from './hooks/useTranslation';
 import { locales, Language } from './data/locales';
-import { Globe, Shield, Terminal, Cpu, Bug, Github, Linkedin, Lock, Menu, X } from 'lucide-react';
+import { Globe, Shield, Terminal, Cpu, Bug, Github, Linkedin, Lock, Menu, X, Download } from 'lucide-react';
 import Projects from './sections/Projects';
 import Skills from './sections/Skills';
 import About from './sections/About';
@@ -210,21 +210,32 @@ export default function App() {
             </p>
 
             {/* Structured CTAs */}
-            <div className="grid grid-cols-2 gap-3 pt-2">
-              <button 
-                onClick={() => scrollToAnchor('projects')}
-                className="px-4 py-2 border border-red-500/20 bg-red-950/10 hover:bg-red-500/15 text-red-500 font-mono text-xs rounded transition-all duration-300 cursor-pointer flex items-center justify-center gap-1.5"
+            <div className="space-y-3 pt-2">
+              <div className="grid grid-cols-2 gap-3">
+                <button 
+                  onClick={() => scrollToAnchor('projects')}
+                  className="px-4 py-2 border border-gray-800 bg-transparent hover:bg-gray-700/20 text-gray-400 font-mono text-xs rounded transition-all duration-300 cursor-pointer flex items-center justify-center gap-1.5"
+                >
+                  <Terminal className="w-3.5 h-3.5" />
+                  {t.hero.cta_primary}
+                </button>
+                <button 
+                  onClick={() => scrollToAnchor('contact')}
+                  className="px-4 py-2 border border-gray-800 bg-transparent hover:bg-gray-700/20 text-gray-400 font-mono text-xs rounded transition-all duration-300 cursor-pointer flex items-center justify-center gap-1.5"
+                >
+                  <Cpu className="w-3.5 h-3.5" />
+                  {t.hero.cta_secondary}
+                </button>
+              </div>
+              
+              <a 
+                href="/CV_Carlos_Sanz_Pena.pdf"
+                download="CV_Carlos_Sanz_Pena.pdf"
+                className="w-full px-4 py-2.5 border border-red-500/30 bg-red-950/10 hover:bg-red-500/10 hover:border-red-500/60 text-red-400 hover:text-red-500 font-mono text-xs rounded transition-all duration-300 cursor-pointer flex items-center justify-center gap-2 shadow-[0_4px_12px_rgba(225,29,72,0.05)]"
               >
-                <Terminal className="w-3.5 h-3.5" />
-                {t.hero.cta_primary}
-              </button>
-              <button 
-                onClick={() => scrollToAnchor('contact')}
-                className="px-4 py-2 border border-gray-800 bg-transparent hover:border-gray-700 text-gray-400 font-mono text-xs rounded transition-all duration-300 cursor-pointer flex items-center justify-center gap-1.5"
-              >
-                <Cpu className="w-3.5 h-3.5" />
-                {t.hero.cta_secondary}
-              </button>
+                <Download className="w-3.5 h-3.5" />
+                {t.hero.cta_cv}
+              </a>
             </div>
           </div>
         </div>

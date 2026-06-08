@@ -29,9 +29,9 @@ export const projectsData: Project[] = [
     },
     description: {
       es: 'Sistema operativo básico, desarrollado a partir del esqueleto ZeOS, para arquitectura x86. Implementa descriptor tables (GDT, IDT), gestor de interrupciones, controlador de teclado por polling e interrupción, paginación básica, gestión de procesos, restauración de contextos de CPU y un gestor de memoria física.',
-      ca: 'Un nucli monolític bàsic desenvolupat des de zero per a arquitectura x86. Implementa descriptor tables (GDT, IDT), gestor d\'interrupcions, controlador de teclat per polling i interrupció, paginació bàsica, restauració de contextos de CPU i un gestor de memòria física rudimentari.',
-      en: 'A basic monolithic custom kernel built from scratch for x86 architecture. Implements global/interrupt descriptor tables (GDT, IDT), interrupt routing, polling & interrupt-driven keyboard drivers, basic paging, CPU context saving/restoration, and a physical memory manager.',
-      fr: 'Un noyau monolithique de base développé à partir de zéro pour l\'architecture x86. Implémente les tables de descripteurs (GDT, IDT), un gestionnaire d\'interruptions, un pilote de clavier, la pagination de base, la restauration de contexte CPU et un gestionnaire rudimentaire de mémoire physique.',
+      ca: 'Sistema operatiu bàsic, desenvolupat a partir de l\'esquelet ZeOS, per a arquitectura x86. Implementa descriptor tables (GDT, IDT), gestor d\'interrupcions, controlador de teclat per polling i interrupció, paginació bàsica, gestió de processos, restauració de contextos de CPU i un gestor de memòria física.',
+      en: 'Basic operating system, developed from the ZeOS skeleton, for x86 architecture. It implements descriptor tables (GDT, IDT), interrupt manager, keyboard controller by polling and interrupt, basic paging, process management, CPU context restoration, and a physical memory manager.',
+      fr: 'Système d\'exploitation de base, développé à partir du squelette ZeOS, pour l\'architecture x86. Il implémente des tables de descripteurs (GDT, IDT), un gestionnaire d\'interruptions, un contrôleur de clavier par interrogation et interruption, une pagination de base, la gestion des processus, la restauration du contexte du processeur et un gestionnaire de mémoire physique.',
     },
   },
   {
@@ -40,10 +40,10 @@ export const projectsData: Project[] = [
     githubUrl: 'https://github.com/Skaut155/Derby-Dungeon',
     demoUrl: 'https://itch.io/embed-upload/17844542?color=333333',
     title: {
-      es: 'Derby Dungeon',
-      ca: 'Derby Dungeon',
-      en: 'Derby Dungeon',
-      fr: 'Derby Dungeon',
+      es: 'Derby\'s Dungeon',
+      ca: 'Derby\'s Dungeon',
+      en: 'Derby\'s Dungeon',
+      fr: 'Derby\'s Dungeon',
     },
     category: {
       es: 'Desarrollo de Videojuegos 3D',
@@ -53,9 +53,9 @@ export const projectsData: Project[] = [
     },
     description: {
       es: 'Videojuego de mazmorras tridimensional con mecánicas de combate activo, creación de niveles y comportamientos de enemigos optimizados mediante algoritmos de navegación. Diseñado con máquinas de estados finitos robustas.',
-      ca: 'Videojoc de mazmorres tridimensional amb mecàniques de combat actiu, generació semi-procedimental de sales i comportaments d\'IA enemiga optimitzats mitjançant malles de navegació. Dissenyat amb arquitectures d\'estats finits robustes.',
-      en: 'A fast-paced 3D dungeon action game featuring active combat mechanics, semi-procedural room layouts, and optimized enemy AI pathfinding using NavMesh. Built using a robust Finite State Machine (FSM) modular architecture.',
-      fr: 'Jeu vidéo de donjon en 3D proposant des combats actifs, une génération de salles semi-procédurale et des comportements IA optimisés via des maillages de navigation (NavMesh). Conçu avec des machines d\'état robustes.',
+      ca: 'Videojoc de mazmorres tridimensional amb mecàniques de combat actiu, creació de nivells i comportaments d\'IA enemiga optimitzats mitjançant algoritmes de navegació. Dissenyat amb arquitectures d\'estats finits robustes.',
+      en: 'A fast-paced 3D dungeon action game featuring active combat mechanics, level creation and optimized enemy AI pathfinding using navigation algorithms. Built using a robust Finite State Machine modular architecture.',
+      fr: 'Jeu vidéo de donjon en 3D proposant des combats actifs, création de niveaux et des comportements IA optimisés via des maillages de navigation. Conçu avec des machines d\'état robustes.',
     },
   },
   {
