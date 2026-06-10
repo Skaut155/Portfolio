@@ -183,7 +183,7 @@ export default function Projects() {
               {/* Embedded Iframe matching the user's styling */}
               <div className="w-full max-w-[1200px] h-[400px] sm:h-[720px] mx-auto rounded-md overflow-hidden bg-[#333333] border border-gray-901 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
                 <iframe
-                  src="https://itch.io/embed-upload/17844542?color=333333"
+                  src="https://itch.io/embed-upload/17877946?color=333333"
                   frameBorder="0"
                   allowFullScreen={true}
                   scrolling="no"
